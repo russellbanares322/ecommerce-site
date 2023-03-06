@@ -6,3 +6,12 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+
+@layer utilities {
+  .page_header_text {
+    @apply text-center text-[1.7rem] font-semibold text-dark-blue relative pt-10;
+  }
+  .page_header_text::after {
+    @apply content-[''] bg-dark-cyan absolute h-[4px] w-[50px] left-0 right-0 bottom-[-4px] rounded-xl block mx-auto;
+  }
+}
