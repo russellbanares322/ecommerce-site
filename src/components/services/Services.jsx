@@ -7,7 +7,7 @@ const Services = () => {
   return (
     <div className="bg-light-gray h-auto pb-5">
       <p className="page_header_text">Our services</p>
-      <div className="pt-10 px-7">
+      <div className="pt-10 px-2">
         <div className="flex justify-center gap-20 flex-wrap-reverse mt-10">
           <img src={teamImg} className="w-[20rem] h-[20rem]" />
           <div className="pt-10">

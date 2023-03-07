@@ -14,7 +14,7 @@ const Banner = () => {
             The most trusted and awesome store in town
           </p>
           <button className="mt-8 bg-dark-blue text-white px-6 py-2 flex items-center justify-center hover:bg-opacity-90">
-            Shop Now
+            Start Shopping
             <HiOutlineArrowLongRight className="ml-2" size={20} />
           </button>
         </div>
