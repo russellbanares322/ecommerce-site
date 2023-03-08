@@ -4,12 +4,12 @@ import { TbChessBishopFilled } from "react-icons/tb";
 const Navbar = () => {
   return (
     <div>
-      <nav className="w-100 flex justify-between px-10 py-5 bg-dark-cyan text-white items-center">
+      <nav className="w-100 flex justify-between px-10 py-5 bg-dark-cyan text-white items-center font-light">
         <div>
-          <h3 className="cursor-pointer flex items-center justify-center">
+          <p className="cursor-pointer flex items-center justify-center font-normal">
             <TbChessBishopFilled className="mr-1" />
             Shopperuss
-          </h3>
+          </p>
         </div>
         <div className="flex gap-5 justify-center items-center">
           <p className="cursor-pointer">Home</p>

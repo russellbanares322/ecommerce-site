@@ -12,12 +12,18 @@ const FeaturedProduct = () => {
     console.log("renders");
   }, []);
 
+  const handleAddToCart = (productDetails) => {
+    alert(
+      `Product title is ${productDetails.title} and it's price is ${productDetails.price}`
+    );
+  };
   return (
     <div className="bg-white h-auto pb-[10rem]">
       <p className="page_header_text">Featured Products</p>
       <div className="flex items-center justify-center gap-5 mt-[13rem] flex-wrap">
         {products.slice(0, 4).map((product) => (
           <div
+            onClick={() => handleAddToCart(product)}
             className="flex flex-col items-center justify-center gap-2 h-[10rem] w-[16rem] mb-[5rem]"
             key={product.id}
           >
