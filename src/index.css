@@ -20,4 +20,10 @@
   hr {
     @apply text-light-gray h-[0.3px];
   }
+  .nav_links {
+    @apply cursor-pointer text-[0.9rem] p-4;
+  }
+}
+body {
+  background-color: #2b7a78;
 }

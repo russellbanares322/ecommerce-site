@@ -1,20 +1,15 @@
-import Banner from "./components/banner/Banner";
-import FeaturedProduct from "./components/featured/FeaturedProduct";
+import Home from "./pages/Home";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
-import NewsLetter from "./components/newsletter/NewsLetter";
-import Services from "./components/services/Services";
-import Testimonial from "./components/testimonial/Testimonial";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div>
       <Navbar />
-      <Banner />
-      <Services />
-      <FeaturedProduct />
-      <Testimonial />
-      <NewsLetter />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
       <Footer />
     </div>
   );

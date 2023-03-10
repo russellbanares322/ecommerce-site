@@ -9,7 +9,7 @@ import {
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <div className="bg-dark-cyan h-auto pb-5">
+    <div className="h-auto pb-5">
       <div className="px-[4rem] pb-10">
         <div className="flex justify-between items-center pt-11">
           <p className="text-2xl text-light-gray">Shopperuss</p>
