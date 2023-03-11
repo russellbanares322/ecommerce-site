@@ -20,7 +20,7 @@
   hr {
     @apply text-light-gray h-[0.3px];
   }
-  .nav_links {
+  .nav_link {
     @apply cursor-pointer text-[0.9rem] p-4;
   }
 }

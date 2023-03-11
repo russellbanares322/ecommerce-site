@@ -16,8 +16,8 @@ const Testimonial = () => {
         <p className="text-dark-cyan text-[1.1rem]">REVIEWS</p>
         <p className="text-dark-blue text-[1.5rem]">What Clients Say?</p>
       </div>
-      <div className="absolute top-[8rem] right-[10rem] flex justify-center items-center gap-10">
-        <div className="w-[18rem] bg-light-cyan px-8 py-5 rounded-md shadow-2xl">
+      <div className="absolute top-[3rem] right-[10rem] flex justify-center items-center gap-10 flex-wrap md:top-[8rem]">
+        <div className="w-[18rem] bg-light-cyan px-8 py-5 rounded-md shadow-2xl md:px-8 md:py-5">
           <div className="flex items-center justify-start gap-2">
             <img
               className="w-[5rem] h-[5rem] rounded-[10rem] object-cover bg-center mb-5 border-[0.1rem] border-solid border-dark-blue"

@@ -1,23 +1,32 @@
 import React, { useState } from "react";
 import { TbChessBishopFilled } from "react-icons/tb";
 import { HiMenuAlt3, HiMenuAlt4 } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleToggleNavbar = () => {
     setIsNavOpen(!isNavOpen);
   };
   return (
     <div className="flex justify-between items-center h-24 text-light-gray max-w-[1240px] mx-auto px-4">
-      <h1 className="flex items-center justify-center text-xl cursor-pointer mr-auto">
+      <h1
+        onClick={() => navigate("/")}
+        className="flex items-center justify-center text-xl cursor-pointer mr-auto"
+      >
         <TbChessBishopFilled className="mr-1" /> Shopperuss
       </h1>
       <ul className="hidden md:flex items-center justify-center">
-        <li className="p-4 cursor-pointer">Home</li>
-        <li className="p-4 cursor-pointer">Products</li>
-        <li className="p-4 cursor-pointer">About</li>
-        <li className="p-4 cursor-pointer">Contact</li>
+        <li onClick={() => navigate("/")} className="nav_link">
+          Home
+        </li>
+        <li onClick={() => navigate("/products")} className="nav_link">
+          Products
+        </li>
+        <li className="nav_link">About</li>
+        <li className="nav_link">Contact</li>
         <li>
           <button className="bg-dark-blue px-6 py-2 rounded-sm">Login</button>
         </li>
@@ -39,7 +48,10 @@ const Navbar = () => {
         }
       >
         <div className="flex justify-between items-center px-4 py-8 ">
-          <h1 className="flex items-center justify-center text-xl cursor-pointer">
+          <h1
+            onClick={() => navigate("/")}
+            className="flex items-center justify-center text-xl cursor-pointer"
+          >
             <TbChessBishopFilled className="mr-1" /> Shopperuss
           </h1>
           <div>
@@ -53,10 +65,14 @@ const Navbar = () => {
           </div>
         </div>
         <ul className=" pt-24 flex items-center justify-center flex-col">
-          <li className="p-4 cursor-pointer">Home</li>
-          <li className="p-4 cursor-pointer">Products</li>
-          <li className="p-4 cursor-pointer">About</li>
-          <li className="p-4 cursor-pointer">Contact</li>
+          <li onClick={() => navigate("/")} className="nav_link">
+            Home
+          </li>
+          <li onClick={() => navigate("/products")} className="nav_link">
+            Products
+          </li>
+          <li className="nav_link">About</li>
+          <li className="nav_link">Contact</li>
           <li>
             <button className="bg-dark-blue px-6 py-2 rounded-sm">Login</button>
           </li>
