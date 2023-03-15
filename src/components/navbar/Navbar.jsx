@@ -22,13 +22,19 @@ const Navbar = () => {
         <li onClick={() => navigate("/")} className="nav_link">
           Home
         </li>
-        <li onClick={() => navigate("/products")} className="nav_link">
+        <li
+          onClick={() => {
+            navigate("/products");
+          }}
+          className="nav_link"
+        >
           Products
         </li>
         <li className="nav_link">About</li>
         <li className="nav_link">Contact</li>
-        <li>
-          <button className="bg-dark-blue px-6 py-2 rounded-sm">Login</button>
+        <li onClick={() => navigate("/cart")} className="cursor-pointer">
+          {/* <button className="bg-dark-blue px-6 py-2 rounded-sm">Login</button> */}
+          Cart
         </li>
       </ul>
       <div>
