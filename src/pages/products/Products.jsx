@@ -1,38 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import useProductStore from "../../store/productStore";
 import { BsStarFill, BsStarHalf } from "react-icons/bs";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import ProductSkeleton from "../../components/skeleton/ProductSkeleton";
+import useCartStore from "../../store/cartStore";
 
 const Products = () => {
   const products = useProductStore((state) => state.products);
   const isLoading = useProductStore((state) => state.isLoading);
-  const [savedProduct, setSavedProduct] = useState([]);
   const handleFetchProducts = useProductStore(
     (state) => state.handleFetchProducts
   );
+  const handleAddToCart = useCartStore((state) => state.handleAddToCart);
 
   useEffect(() => {
     handleFetchProducts();
   }, []);
-
-  const handleAddToCart = (product) => {
-    if (savedProduct.includes(product)) {
-      alert("Product already saved!");
-      return;
-    } else {
-      setSavedProduct([...savedProduct, product]);
-      localStorage.setItem("savedProduct", JSON.stringify(savedProduct));
-    }
-
-    alert(
-      `Successfully added ${product.title} to cart, and it's price is ${product.price}`
-    );
-  };
-
-  useEffect(() => {
-    localStorage.setItem("savedProduct", JSON.stringify(savedProduct));
-  }, [savedProduct]);
 
   return (
     <div className="bg-light-gray h-full py-[2rem]">

@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import useCartStore from "../../store/cartStore";
 
 const Cart = () => {
-  const [cartData, setCartData] = useState([]);
   const [quantity, setQuantity] = useState(1);
+  const cart = useCartStore((state) => state.cart);
+  const handleRemoveProduct = useCartStore(
+    (state) => state.handleRemoveProduct
+  );
 
   const handleIncrement = () => {
     setQuantity((prevValue) => prevValue + 1);
@@ -11,26 +15,11 @@ const Cart = () => {
     setQuantity((prevValue) => prevValue - 1);
   };
 
-  useEffect(() => {
-    const cart = localStorage.getItem("savedProduct" || "[]");
-    if (cart) {
-      setCartData(JSON.parse(cart));
-    }
-  }, []);
-  const total = cartData.reduce(
-    (prev, curr) => prev + curr.price * quantity,
-    0
-  );
-
-  const handleRemoveProduct = (productID) => {
-    const filteredCart = cartData.filter((val) => val.id !== productID);
-    setCartData(filteredCart);
-    localStorage.setItem("savedProduct", JSON.stringify(filteredCart));
-  };
+  const total = cart.reduce((prev, curr) => prev + curr.price * quantity, 0);
 
   return (
     <div className="h-screen bg-light-gray">
-      {cartData.map((val) => (
+      {cart.map((val) => (
         <div key={val.id}>
           <h1>{val.title}</h1>
           <h1>{quantity === 1 ? val.price : val.price * quantity}</h1>
