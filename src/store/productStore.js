@@ -4,7 +4,7 @@ const useProductStore = create((set) => ({
   products: [],
   isLoading: false,
   handleFetchProducts: async () => {
-    set({ isLoading: true });
+    set((state) => ({ ...state, isLoading: true }));
     const response = await fetch(
       `${import.meta.env.VITE_REACT_APP_FS_API_BASE_URL}/products`
     );
@@ -12,12 +12,10 @@ const useProductStore = create((set) => ({
     const check = localStorage.getItem("products");
 
     if (check) {
-      await set({ products: JSON.parse(check) });
-      set({ isLoading: false });
+      await set({ isLoading: false, products: JSON.parse(check) });
     } else {
-      await set({ products: jsonResponse });
+      await set({ isLoading: false, products: jsonResponse });
       localStorage.setItem("products", JSON.stringify(jsonResponse));
-      set({ isLoading: false });
     }
   },
 }));
